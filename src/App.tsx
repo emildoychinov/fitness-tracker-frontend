@@ -3,6 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  fetch('/home', {
+    method: 'GET',
+    mode:'cors'
+  }).then(async (resp)=>{
+    var res = await resp.json();
+    console.log(res.message); 
+  })
   return (
     <div className="App">
       <header className="App-header">
