@@ -1,8 +1,8 @@
 
 
 .home {
-    width: 2470px;
-    height: 975px; 
+    width: 1920px;
+    height: 1080px; 
     height: 95vh;
     background-color: rgba(0, 0, 0, 0.5);
     overflow-x: hidden; 
@@ -17,8 +17,8 @@
 }
 
 .image-style {
-    width: 2470px;
-    height: 975px; 
+    width: 1920px;
+    height: 1080px; 
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -45,7 +45,7 @@
 .main-text {
     margin-top: 20rem;
     align-items: center;
-    margin-left: 60rem;
+    margin-left: 42rem;
 }
 
 
