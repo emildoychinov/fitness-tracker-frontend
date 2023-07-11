@@ -12,23 +12,18 @@ class Home extends React.Component<RouteComponentProps<Home>, {}> {
     return (
       <>
         <div className="home" id="home">
-          <div className="main-text" id="main-text">
-            <h2>
-              {" "}
-              <span>BUILD</span> YOUR <span>BODY</span> STRONG{" "}
-            </h2>
-            <p>Make the best version of yourself!</p>
-          </div>
 
-          </div>
+        <div className="main-image" id="main-image">
+        <img src="/assets/imgs/fitness.png" alt="fitness.png" className="image-style"/>
 
-          <div className="main-image" id="main-image">
-            <img
-              src="/assets/imgs/fitness.png"
-              alt="fitness.png"
-              className="image-style"
-            />
-          </div>
+        </div>
+            <div className="main-text" id="main-text">
+              <h2><span>BUILD</span> YOUR <span>BODY</span> STRONG</h2>
+              <p>Make the best version of yourself!</p>
+            </div>
+
+        </div>
+
         
 
         <div className="button" id="button">
@@ -41,6 +36,7 @@ class Home extends React.Component<RouteComponentProps<Home>, {}> {
           </button>
         </div>
       </>
+      
     );
   }
 
