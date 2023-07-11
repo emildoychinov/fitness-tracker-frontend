@@ -34,6 +34,9 @@ class Home extends React.Component<RouteComponentProps<Home>, {}> {
           <button onClick={(e: any) => this.onClickMove(RouterPathEnum.MEMBER)}>
             Go Eexercises
           </button>
+          <button onClick={(e: any) => this.onClickMove(RouterPathEnum.REGISTER)}>
+            Go Register
+          </button>
         </div>
       </>
       
