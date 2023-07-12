@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./SearchBar.css";
-import { FaBeer } from 'react-icons/fa';
-
+import { FaSearch } from 'react-icons/fa';
 
 
 const SearchBar = () => {
@@ -21,21 +20,27 @@ const SearchBar = () => {
 
   return (
     <>
-
-     <div className="searchbar" id="searchbar">
-    <form className="form-search" onSubmit={handleSubmit}>
-      <input className="search-text"
+    <body className="main-box">
+    <div className="box">
+    <form onSubmit={handleSubmit}>
+      <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search"
         value={searchText}
         onChange={handleSearch}
       />
-       <i className="fa fa-search" aria-hidden="true">
-       <button type="submit">Sumbmit</button>
-       </i>
+      <a href="#">
+      <i className="search-icon">
+        <FaSearch/>
+     </i>
+
+      </a>
+
     </form>
 
     </div>
+      
+    </body>
     
     
     </>
