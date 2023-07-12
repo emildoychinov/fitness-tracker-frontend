@@ -9,6 +9,7 @@ import Home from './components/home/Home';
 import './App.css';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
+import SearchBar from './components/SearchBar/SearchBar';
 
 interface IState {
   isSmallScreen: boolean;
@@ -35,8 +36,14 @@ class App extends React.Component<{}, IState> {
 
 
   public render() {
-    return (
-      <div>
+    return (    
+<>
+  <div>
+
+    <div>
+      <h1>Search Example</h1>
+      <SearchBar />
+    </div>
         <BrowserRouter>
         <div className="app" id="app">
           { this.state.isSmallScreen ? <HeaderSmall /> : <Header /> }
@@ -54,7 +61,12 @@ class App extends React.Component<{}, IState> {
          </div>
          </BrowserRouter>
         
-      </div>
+  </div> 
+
+
+</>
+
+      
       
     );
   }

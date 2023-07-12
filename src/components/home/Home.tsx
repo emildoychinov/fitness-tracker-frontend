@@ -22,21 +22,19 @@ class Home extends React.Component<RouteComponentProps<Home>, {}> {
               <p>Make the best version of yourself!</p>
             </div>
 
-        </div>
-
-        
-
-        <div className="button" id="button">
+            <div className="button" id="button">
           <button onClick={(e: any) => this.onClickMove(RouterPathEnum.ABOUT)}>
             Go About
           </button>
           &nbsp;
           <button onClick={(e: any) => this.onClickMove(RouterPathEnum.MEMBER)}>
-            Go Eexercises
+            Go Exercises
           </button>
           <button onClick={(e: any) => this.onClickMove(RouterPathEnum.REGISTER)}>
             Go Register
           </button>
+        </div>
+
         </div>
       </>
       

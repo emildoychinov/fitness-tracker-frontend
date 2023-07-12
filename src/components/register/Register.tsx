@@ -1,7 +1,7 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { RouterPathEnum } from "src/enums/RouterPathEnum";
-
+import "./Register.css";
 
 class Register extends React.Component<RouteComponentProps<Register>, {}> {
     state = {
@@ -56,6 +56,11 @@ class Register extends React.Component<RouteComponentProps<Register>, {}> {
     render() {      
       return (
         <>
+
+        <div className="main-img" id="main-img">
+          <img src="/assets/imgs/imagine.png" alt="imagine.png" className="image-register"/>
+
+        </div>
           <form
             className="register"
             onSubmit={this.onSubmit}
@@ -92,7 +97,10 @@ class Register extends React.Component<RouteComponentProps<Register>, {}> {
                     />
                 </label>
             </div>
-            <button type="submit" />
+
+            <div>
+            <button className="register-buttons" type="submit">Submit</button>
+            </div>
         </form>
         </>
         

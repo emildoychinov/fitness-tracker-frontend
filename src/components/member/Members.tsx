@@ -10,8 +10,13 @@ class Members extends React.Component<RouteComponentProps<Members>, {}> {
 
   render() {
     return(
-      <div className="Exercises" id="Members">
-        <h2>EXERCISES</h2>
+      <div className="exercises" id="members">
+
+        <img src="/assets/imgs/muscle.png" alt="muscle.png" className="image-exercises"/>
+
+        <div>
+            <h2>EXERCISES</h2>
+        </div>
 
         <button onClick={ ( e: any ) => this.onClickMove( RouterPathEnum.ABOUT ) }>
             Go About

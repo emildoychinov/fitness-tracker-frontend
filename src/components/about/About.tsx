@@ -22,9 +22,11 @@ class About extends React.Component<RouteComponentProps<About>, {}> {
           {id: 2}
         ]} emptyHeading="No Videos" />
 
-        <button onClick={(e: any) => this.props.history.goBack()}>
-          Go Back
-        </button>
+        <div className="workout-content-btn">
+            <button onClick={(e: any) => this.props.history.goBack()}>
+              Go Back
+            </button>
+        </div>
       </>
     );
   }
