@@ -1,6 +1,10 @@
 .app{
+    width: 1920px;
+    height: 1080px;
     height: 100%;
-    width: 100%;
+    width: 100%; 
+    overflow-x: hidden; 
+    overflow-y: hidden; 
     margin: 0;
     padding: 0;
     align-items: center;
@@ -8,7 +12,6 @@
     align-items: center;
     position: relative;
     display: inline-block;
-    vertical-align:middle;
     overflow: auto;
     
 }
