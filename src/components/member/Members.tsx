@@ -32,30 +32,28 @@ const Members: React.FC<RouteComponentProps<{}, {}>> = (props) => {
 
   return (
     <>
-      <div className="buttons-add-remove">
-        <button className="add-btn" onClick={handleAdd}>
-          Add
-        </button>
-        {val.map((data, i) => {
-          return (
-            <div className="remove-button" key={i}>
-              <input className="remove-input" value={data.value} onChange={(e) => handleChange(e, i)} />
-              <button className="remove-btn" onClick={() => handleDelete(i)}>
-                X
-              </button>
-            </div>
-          );
-        })}
-      </div>
-      <div className="exercises" id="members">
-        <img
-          src="/assets/imgs/muscle.png"
-          alt="muscle.png"
-          className="image-exercises"
-        />
-        <div>
-          <h2>EXERCISES</h2>
+      <body className="exercises-page">
+      <h2>EXERCISES</h2>
+        <div className="buttons-add-remove">
+          <button className="add-btn" onClick={handleAdd}>
+            Add
+          </button>
+          {val.map((data, i) => {
+            return (
+              <div className="remove-button" key={i}>
+                <input
+                  className="remove-input"
+                  value={data.value}
+                  onChange={(e) => handleChange(e, i)}
+                />
+                <button className="remove-btn" onClick={() => handleDelete(i)}>
+                  X
+                </button>
+              </div>
+            );
+          })}
         </div>
+        <div className="exercises" id="members">
         <button onClick={(e: any) => onClickMove(RouterPathEnum.ABOUT)}>
           Go About
         </button>
@@ -63,7 +61,8 @@ const Members: React.FC<RouteComponentProps<{}, {}>> = (props) => {
         <button onClick={(e: any) => onClickMove(RouterPathEnum.HOME)}>
           Go Home
         </button>
-      </div>
+        </div>
+      </body>
     </>
   );
 

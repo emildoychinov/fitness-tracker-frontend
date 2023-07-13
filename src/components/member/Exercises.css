@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   min-width: 200px;
-  margin-left: 6.5rem;
+  margin-left: 8rem;
   margin-top: 10rem;
   align-items: center;
   position: absolute;
@@ -22,7 +22,7 @@
   cursor: pointer;
   transition: color 0.4s linear;
 }
- .add-btn:hover {
+.add-btn:hover {
   color: #fff;
 }
 
@@ -40,50 +40,58 @@
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
 }
 
+.remove-input {
+  position: relative;
+  margin-left: 3rem;
+  color: white;
+  border: 2px solid #fff;
+  font-size: 20px;
+  background: transparent;
+}
+
 .add-btn::before {
-    transform: scaleX(0);
+  transform: scaleX(0);
 }
 
 .add-btn:hover::before {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-.remove-input {
+.remove-btn {
+  color: white;
+  border: 2px solid #fff;
+  font-size: 15px;
+  background: transparent;
+}
+
+.remove-btn {
   font-size: 15px;
   background: transparent;
   color: white;
   border: 2px solid #fff;
   font-family: "montserrat", sans-serif;
   text-transform: uppercase;
-  padding: 12px 20px;
+  padding: 1px 5px;
   margin: 10px;
+  transition: color 0.4s linear;
 }
 
-.image-exercises {
-  width: 1920px;
-  height: 1080px;
-  height: 100vh;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  object-fit: cover;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: -1;
-  filter: brightness(50%);
+.remove-btn:hover {
+  background: white;
+  color: black;
 }
 
-.exercises h2 {
+.exercises-page h2 {
   font-size: 3rem;
+  position: absolute;
+  margin-left: 1.5rem;
   color: rgb(255, 255, 255);
   font-family: "Source Sans Pro";
   align-items: center;
 }
 
-.exercises button {
-  margin-top: 54rem;
+.exercises-page .exercises button {
+  margin-top: 58.5rem;
   font-family: "Source Sans Pro";
   font-size: 30px;
   padding: 8px 30px;
@@ -105,18 +113,24 @@
   transform: scale(1.04);
 }
 
-.exersices {
-  width: 1920px;
-  height: 1080px;
-  height: 100vh;
+.exercises-page {
+  background-image: url("/assets/imgs/muscle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  object-fit: cover;
-  display: flex;
-  align-items: flex-end;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  align-items: center;
   justify-content: center;
-  z-index: -1;
-  filter: brightness(50%);
+  align-items: center;
+  position: relative;
+  display: inline-block;
+  overflow: auto;
+}
+
+.exercises {
+    margin-bottom: 1rem;
 }
