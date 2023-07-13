@@ -14,7 +14,6 @@
 
 
 
-
 .register {
     width: 1920px;
     height: 1080px; 
@@ -39,7 +38,7 @@ label {
     font-family: 'Courier New', Courier, monospace;
 }
 
-input {
+.register input {
     font-size: 18px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: inline-block;

@@ -37,6 +37,7 @@ a {
     font-size: 30px;
     letter-spacing: 0.5px;
     padding: 0 10px;
+    text-shadow: 25px black;
 }
 
 a:after {
