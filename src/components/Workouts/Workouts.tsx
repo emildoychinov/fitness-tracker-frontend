@@ -7,14 +7,14 @@ import { getFromRoute } from "src/requests";
 const Workouts = ({ match, history}: any) => {
     const [elements, setElements] = useState<{ id?: string, name?: string }[]>([]);
     const [searchInput, setSearchInput] = useState('')
-
+    
     useEffect(() => {
         const loadData = async () => {
             setSearchInput(match.params.workout_id);
-            console.log(searchInput);
+            console.log('searchInput:',match.params.workout_id);
 
             try {
-                const response = await fetch('/workout_exercises/findall/'+searchInput, {
+                const response = await fetch(`/workout_exercises/findall/${match.params.workout_id}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ const Workouts = ({ match, history}: any) => {
     
                 const data = await response.json()
                 console.log('data',data);
-                
+
                 setElements(data)
                 console.log('elements',elements);
                 

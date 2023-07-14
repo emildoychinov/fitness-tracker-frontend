@@ -10,10 +10,10 @@ const ResultsPage = ({ match, history}: any) => {
     useEffect(() => {
         const loadData = async () => {
             setSearchInput(match.params.search_text);
-            console.log(searchInput);
+            console.log('huinqta',searchInput);
             const searchBody = {
                 filteringOption: "name",
-                filter: searchInput
+                filter: match.params.search_text
             }
             try {
                 const response = await fetch('/workouts/filter', {
@@ -41,9 +41,9 @@ const ResultsPage = ({ match, history}: any) => {
         };
     }, [searchInput]);
 
-    useEffect(() => {
-        setSearchInput(match.params.search_text);
-    }, [match.params.search_text]);
+    // useEffect(() => {
+    //     setSearchInput(match.params.search_text);
+    // }, [match.params.search_text]);
 
     return (
         <div style={{backgroundColor: 'red', width: '100px', height: '100px'}}>
