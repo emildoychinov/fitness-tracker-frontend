@@ -68,7 +68,7 @@ class Register extends React.Component<RouteComponentProps<Register>, {}> {
             <div>
                 <label>
                 Username :
-                    <input
+                    <input 
                         type="text"
                         name="username"
                         placeholder="examplename123"
