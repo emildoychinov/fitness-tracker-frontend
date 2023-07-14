@@ -2,26 +2,24 @@ import * as React from "react";
 import { useEffect, useState } from 'react';
 import { withRouter } from "react-router-dom";
 import { RouterPathEnum } from "src/enums/RouterPathEnum";
+import { getFromRoute } from "src/requests";
 
-const ResultsPage = ({ match, history}: any) => {
+const Workouts = ({ match, history}: any) => {
     const [elements, setElements] = useState<{ id?: string, name?: string }[]>([]);
     const [searchInput, setSearchInput] = useState('')
 
     useEffect(() => {
         const loadData = async () => {
-            setSearchInput(match.params.search_text);
+            setSearchInput(match.params.workout_id);
             console.log(searchInput);
-            const searchBody = {
-                filteringOption: "name",
-                filter: searchInput
-            }
+
             try {
-                const response = await fetch('/workouts/filter', {
-                    method: 'POST',
+                const response = await fetch('/workout_exercises/findall/'+searchInput, {
+                    method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
+                        'authorization': 'Bearer ' + localStorage.getItem('API_KEY') || ''
                     },
-                    body: JSON.stringify(searchBody)
                 })
     
                 const data = await response.json()
@@ -43,20 +41,19 @@ const ResultsPage = ({ match, history}: any) => {
 
     useEffect(() => {
         setSearchInput(match.params.search_text);
-    }, [match.params.search_text]);
+      }, [match.params.search_text]);
 
     return (
         <div style={{backgroundColor: 'red', width: '100px', height: '100px'}}>
             {elements.map((element) => (
                 <div 
                     key={element.id}
-                    onClick={() => {history.push(`${RouterPathEnum.WORKOUT.replace(':workout_id', element.id || '')}`);}}
                 >
-                    {element.name}
+                    test
                 </div>
             ))}
         </div>
     );
 };
 
-export default withRouter(ResultsPage);
+export default withRouter(Workouts);

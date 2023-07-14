@@ -5,5 +5,5 @@ export enum RouterPathEnum {
     LOGIN = "/login",
     REGISTER = '/register',
     SEARCH = '/search/:search_text',
-    WORKOUT = "/workouts/:id"
+    WORKOUT = "/workouts/:workout_id"
 }
