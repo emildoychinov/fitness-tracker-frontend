@@ -1,7 +1,7 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { RouterPathEnum } from "src/enums/RouterPathEnum";
-
+import { postToRoute } from "src/requests";
 
 class Login extends React.Component<RouteComponentProps<Login>, {}> {
     state = {
@@ -15,7 +15,7 @@ class Login extends React.Component<RouteComponentProps<Login>, {}> {
         this.setState({ text: e.currentTarget.value });
     };
     
-    onSubmit = (e: React.SyntheticEvent) =>{
+    onSubmit = async (e: React.SyntheticEvent) =>{
         e.preventDefault();
         const target = e.target as typeof e.target & {
             username: { value: string };
@@ -34,7 +34,7 @@ class Login extends React.Component<RouteComponentProps<Login>, {}> {
 
         console.log("data ", data);
         
-        fetch('auth/login', {
+        await fetch('auth/login', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             mode: "cors",
@@ -45,6 +45,13 @@ class Login extends React.Component<RouteComponentProps<Login>, {}> {
             console.log(resp)
             localStorage.setItem('API_KEY', resp.token)
         }))
+        .then(async ()=>{
+            var res = await postToRoute('workouts/filter', {
+                filteringOption: "name",
+                filter: "huq"
+            })
+            console.log("res : ", res.json())
+        })
     }
   
     render() {      
