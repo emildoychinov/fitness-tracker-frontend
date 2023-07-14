@@ -31,6 +31,10 @@
     align-items: center;
 }
 
+.save-btn {
+    top: 0;
+}
+
 
 .image-background {
     width: 2470px;

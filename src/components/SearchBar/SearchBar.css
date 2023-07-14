@@ -12,10 +12,10 @@
     position: absolute;
     margin-left: 2rem;
     justify-content: center;
-    width: 4%;
+    width: 2%;
     outline: none;
     border: none;
-    padding: 2px 5px;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
     z-index: 100;
@@ -34,7 +34,7 @@
 
 
 .box:hover input{
-    width: 350px;
+    width: 380px;
 
 }
 

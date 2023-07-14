@@ -15,7 +15,7 @@ class Register extends React.Component<RouteComponentProps<Register>, {}> {
         this.setState({ text: e.currentTarget.value });
     };
     
-    onSubmit = async (e: React.SyntheticEvent) =>{
+    onSubmit = (e: React.SyntheticEvent) =>{
         e.preventDefault();
         const target = e.target as typeof e.target & {
             username: { value: string };
@@ -40,7 +40,7 @@ class Register extends React.Component<RouteComponentProps<Register>, {}> {
 
         console.log("data ", data);
         
-        await fetch('auth/register', {
+        fetch('auth/register', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             mode: "cors",
@@ -50,7 +50,7 @@ class Register extends React.Component<RouteComponentProps<Register>, {}> {
         .then((resp => {
             console.log(resp)
         }))
-        //this.props.history.push(RouterPathEnum.LOGIN);
+        this.props.history.push(RouterPathEnum.LOGIN);
     }
   
     render() {      

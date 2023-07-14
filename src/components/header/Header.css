@@ -29,7 +29,7 @@ body{
     z-index: 100;
 }
 
-a {
+.ulContainer a {
     position: relative;
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -40,7 +40,7 @@ a {
     text-shadow: 25px black;
 }
 
-a:after {
+.ulContainer a:after {
     content: "";
     position: absolute;
     background-color: rgb(255, 89, 0);
@@ -51,7 +51,7 @@ a:after {
     transition: 0.3s;
 }
 
-a:hover:after {
+.ulContainer a:hover:after {
     width: 100%;
 }
 

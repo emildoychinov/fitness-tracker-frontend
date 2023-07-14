@@ -1,9 +1,7 @@
 export enum RouterPathEnum {
-    HOME = '/',
-    ABOUT = '/about',
-    MEMBER = '/member',
-    LOGIN = "/login",
-    REGISTER = '/register',
-    SEARCH = '/search/:search_text',
-    WORKOUT = "/workouts/:workout_id"
+  HOME = '/',
+  ABOUT = '/about',
+  MEMBER = '/member',
+  LOGIN = "/login",
+  REGISTER = '/register'
 }

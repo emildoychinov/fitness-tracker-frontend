@@ -9,9 +9,6 @@ import Home from './components/home/Home';
 import './App.css';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
-import SearchBar from './components/SearchBar/SearchBar';
-import ResultsPage from './components/ResultsPage/ResultsPage';
-import Workouts from './components/Workouts/Workouts';
 
 interface IState {
   isSmallScreen: boolean;
@@ -50,8 +47,6 @@ class App extends React.Component<{}, IState> {
             <Route path={RouterPathEnum.MEMBER} component={Members}/>
             <Route path={RouterPathEnum.LOGIN} component={Login}/>
             <Route path={RouterPathEnum.REGISTER} component={Register}/>
-            <Route path={RouterPathEnum.SEARCH} component={ResultsPage}/>
-            <Route path={RouterPathEnum.WORKOUT} component={Workouts}/>
             <Redirect to={RouterPathEnum.HOME} />
             
 
