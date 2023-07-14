@@ -1,13 +1,16 @@
 import * as React from "react";
 import { useEffect, useState } from 'react';
+import { withRouter } from "react-router-dom";
+import { RouterPathEnum } from "src/enums/RouterPathEnum";
 
-const ResultsPage = ({ search }: any) => {
+const ResultsPage = ({ match }: any) => {
     const [elements, setElements] = useState<{ id?: string, name?: string }[]>([]);
     const [searchInput, setSearchInput] = useState('')
 
     useEffect(() => {
         const loadData = async () => {
-            setSearchInput(search);
+            setSearchInput(match.params.search_text);
+            console.log(searchInput);
             const searchBody = {
                 filteringOption: "name",
                 filter: searchInput
@@ -32,12 +35,23 @@ const ResultsPage = ({ search }: any) => {
             }
         }   
         loadData(); // Execute incrementCount on mount
-    }, []);
+         return () => {
+      // Cleanup function to cancel previous request
+        console.log('Cleanup previous request');
+        };
+    }, [searchInput]);
+
+    useEffect(() => {
+        setSearchInput(match.params.search_text);
+      }, [match.params.search_text]);
 
     return (
         <div style={{backgroundColor: 'red', width: '100px', height: '100px'}}>
             {elements.map((element) => (
-                <div key={element.id}>
+                <div 
+                    key={element.id}
+                    onClick={() => {window.location.href = RouterPathEnum.WORKOUT+'/'+element.id}}
+                >
                     {element.name}
                 </div>
             ))}
@@ -45,4 +59,4 @@ const ResultsPage = ({ search }: any) => {
     );
 };
 
-export default ResultsPage;
+export default withRouter(ResultsPage);

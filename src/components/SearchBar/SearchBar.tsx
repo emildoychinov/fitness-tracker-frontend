@@ -4,8 +4,8 @@ import { FaSearch } from 'react-icons/fa';
 import ResultsPage from "../ResultsPage/ResultsPage";
 import { RouterPathEnum } from "src/enums/RouterPathEnum";
 import { RouteComponentProps } from "react-router-dom";
-
-const SearchBar = () => {
+import { withRouter } from "react-router-dom";
+const SearchBar = ({ history } : any) => {
 
   const [searchText, setSearchText] = React.useState('');
 
@@ -13,13 +13,13 @@ const SearchBar = () => {
     setSearchText(e.target.value);
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     // Perform search or any other action with the search text
     console.log('Search submitted:', searchText);
     // Reset the search text
     setSearchText('');
-    window.location.href=RouterPathEnum.SEARCH
+    history.push(`${RouterPathEnum.SEARCH.replace(':search_text', searchText)}`);
   };
 
   return (
@@ -52,4 +52,4 @@ const SearchBar = () => {
 };
 
 
-export default SearchBar;
+export default withRouter(SearchBar);
